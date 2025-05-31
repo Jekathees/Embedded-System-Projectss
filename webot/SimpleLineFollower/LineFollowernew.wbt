@@ -1,0 +1,115 @@
+#VRML_SIM R2025a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/floors/protos/RectangleArena.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/gctronic/e-puck/protos/E-puck.proto"
+
+WorldInfo {
+}
+Viewpoint {
+  orientation -0.5773502691896258 0.5773502691896258 0.5773502691896258 2.0944
+  position 0.010600790727877594 1.29845116479392e-05 1.9110601180017752
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  translation 0.01 0 0
+  floorTileSize 2 2
+  floorAppearance PBRAppearance {
+    roughness 1
+    metalness 0
+    normalMap ImageTexture {
+      url [
+        "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/parquetry/dark_strip_parquetry_normal.jpg"
+      ]
+    }
+    occlusionMap ImageTexture {
+      url [
+        "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/appearances/protos/textures/parquetry/dark_strip_parquetry_occlusion.jpg"
+      ]
+    }
+  }
+}
+E-puck {
+  translation -0.297808 0.32115 -0.000888978
+  rotation -0.02202648910216401 -0.0013280693429237943 0.9997565053600065 0.0671363
+  controller "LineFollowerToday8"
+  groundSensorsSlot [
+    DistanceSensor {
+      translation 0 -0.01 0
+      rotation 0 1 0 0.7854003061004253
+      name "irs1"
+      type "infra-red"
+    }
+    DistanceSensor {
+      translation 0 0.02 0
+      rotation 0 1 0 0.7853996938995746
+      name "irs2"
+      type "infra-red"
+    }
+  ]
+}
+Solid {
+  translation 0 0.32 0
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0 0 0
+        roughness 1
+      }
+      geometry Box {
+        size 0.6 0.022 0.0001
+      }
+    }
+  ]
+}
+Solid {
+  translation 0 -0.26 0
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0 0 0
+        roughness 1
+      }
+      geometry Box {
+        size 0.6 0.022 0.0001
+      }
+    }
+  ]
+  name "solid(1)"
+}
+Solid {
+  translation -0.29 0.03 0
+  rotation 0 0 1 -1.5707953071795862
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0 0 0
+        roughness 1
+      }
+      geometry Box {
+        size 0.6 0.022 0.0001
+      }
+    }
+  ]
+  name "solid(2)"
+}
+Solid {
+  translation 0.29 0.03 0
+  rotation 0 0 1 1.5708
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0 0 0
+        roughness 1
+      }
+      geometry Box {
+        size 0.6 0.022 0.0001
+      }
+    }
+  ]
+  name "solid(3)"
+}
